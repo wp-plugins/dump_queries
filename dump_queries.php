@@ -1,4 +1,4 @@
-<?php
+<?php 
 /*
 Plugin Name: Dump Queries
 Plugin URI: http://dev.wp-plugins.org/browser/dump_queries/
@@ -30,7 +30,9 @@ function dq_dump_queries() {
 		foreach ($wpdb->queries as $query) {
 			echo "<p>\n";
 			echo "<strong>Query:</strong> {$query[0]}<br/>\n";
-			echo "<strong>Time:</strong> {$query[1]}\n";
+			echo "<strong>Time:</strong> {$query[1]}<br />\n";
+			if ( isset($query[2]) )
+				echo "<strong>Caller:</strong> {$query[2]}\n";
 			echo "</p>\n";
 		}
 	} else {
